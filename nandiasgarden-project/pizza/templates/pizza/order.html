@@ -1,6 +1,10 @@
 <h1>Order A Pizza</h1>
 <h2> {{ note }}</h2>
 
+{% if created_pizza_pk %}
+<a href="{% url 'edit_order' created_pizza_ok %}" >Edit Your Order </a>
+{% endif %}
+
 <form enctype="multipart/form-data" action="{% url 'order' %}" method="post">
   {% csrf_token %}
   <!-- <label for="topping1"> Topping 1: </label>
@@ -20,7 +24,7 @@
 <br><br>
 Want more than one Pizza?
 
-<form action="{% url 'pizza' %}" method="get">
+<form action="{% url 'pizzas' %}" method="get">
   {{ multiple_form}}
   <input type="submit" value="Get Pizzas" />
 </form>

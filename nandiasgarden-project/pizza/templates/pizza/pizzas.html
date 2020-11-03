@@ -5,7 +5,7 @@
     {% csrf_token %}
     {{ formset.management_form }}
 
-    {% for form in forset %}
+    {% for form in formset %}
     {{ form }}
     <br> <br>
     {% endfor %}
