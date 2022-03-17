@@ -4,14 +4,16 @@ from django.shortcuts import render
 from .models import Photo
 from django.views.generic.edit import *
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-
+@login_required
 def photo_list(request):
     photos = Photo.objects.all()
     return render(request, 'photo/list.html', {'photos':photos})
 
-class PhotoUploadView(CreateView):
+class PhotoUploadView(LoginRequiredMixin, CreateView):
     model = Photo
     fields = ['photo', 'text']
     template_name = 'photo/upload.html'

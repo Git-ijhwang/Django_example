@@ -10,7 +10,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8 panel panel-default">
 
-        <p><img src="{{post.photo.url}}" style="width:100%;"></p>
+        <p><img src="{{object.photo}}" style="width:100%;"></p>
         <button type="button" class="btn btn-xs btn-info">
             {{object.author.username}}
         </button>
@@ -18,6 +18,7 @@
 
         <a href="{% url 'photo:photo_delete' pk=object.id %}"
            class="btn btn-outline-danger btn-sm float-right">Delete</a>
+
         <a href="{% url 'photo:photo_update' pk=object.id %}"
            class="btn btn-outline-info btn-sm float-right">Update</a>
 
@@ -25,4 +26,13 @@
     <div class="col-md-2"></div>
 </div>
 
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        {% load disqus_tags %}
+        {% disqus_show_comments %}
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
 {% endblock %}

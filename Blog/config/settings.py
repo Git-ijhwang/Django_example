@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photo',
     'accounts',
+    'disqus',
+    'django.contrib.sites',
+
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # can use reverse_lazy
 LOGIN_REDIRECT_URL = '/'
+
+DISQUS_WEBSITE_SHORTNAME = 'InjunBlog-Django'
+SITE_ID = 1
