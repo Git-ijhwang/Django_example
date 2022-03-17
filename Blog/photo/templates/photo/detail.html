@@ -10,29 +10,39 @@
     <div class="col-md-2"></div>
     <div class="col-md-8 panel panel-default">
 
-        <p><img src="{{object.photo}}" style="width:100%;"></p>
-        <button type="button" class="btn btn-xs btn-info">
-            {{object.author.username}}
-        </button>
-        <p>{{object.text|linebreaksbr}}</p>
+        <p><img src="{{object.photo.url}}" style="width:100%;"></p>
 
-        <a href="{% url 'photo:photo_delete' pk=object.id %}"
-           class="btn btn-outline-danger btn-sm float-right">Delete</a>
 
-        <a href="{% url 'photo:photo_update' pk=object.id %}"
-           class="btn btn-outline-info btn-sm float-right">Update</a>
+        <p class="text-justify">{{object.text|linebreaksbr}}</p>
+        <p class="text-right font-italic">Written by {{object.author.username}}</p>
 
+        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+
+          <div class="btn-group" role="group" aria-label="First group">
+
+            <a href="{% url 'photo:photo_delete' pk=object.id %}"
+                class="btn btn-outline-danger btn-sm float-right">Delete</a>
+                </div>
+            <div class="input-group">
+
+            <a href="{% url 'photo:photo_update' pk=object.id %}"
+                class="btn btn-outline-info btn-sm float-right">Update</a>
+          </div>
+
+        </div>
+
+        <div class="col-md-2"></div>
     </div>
-    <div class="col-md-2"></div>
 </div>
 
 <div class="row">
     <div class="col-md-2"></div>
+
     <div class="col-md-8">
         {% load disqus_tags %}
         {% disqus_show_comments %}
-
     </div>
+
     <div class="col-md-2"></div>
 </div>
 {% endblock %}
