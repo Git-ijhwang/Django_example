@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'languages',
     'photo',
     'accounts',
     'disqus',
@@ -133,3 +134,4 @@ LOGIN_REDIRECT_URL = '/'
 
 DISQUS_WEBSITE_SHORTNAME = 'InjunBlog-Django'
 SITE_ID = 1
+STATICFILES_DIRS = ( os.path.join('static'), )

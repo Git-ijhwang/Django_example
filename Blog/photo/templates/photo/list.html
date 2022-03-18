@@ -15,15 +15,11 @@
         <p><img src="{{post.photo.url}}" style="width:100%;"></p>
             </div>
 
-
         <p class="text-justify">{{post.text|linebreaksbr}}</p>
         <p class="text-right font-italic">Written by {{post.author.username}}</p>
         <p class="text-right">
             <a href="{% url 'photo:photo_detail' pk=post.id %}" class="btn btn-xs btn-success">Comment</a>
         </p>
-
-<!--        <button type="button" class="btn btn-xs btn-info"> {{post.author.username}} </button>-->
-<!--        <p>{{post.text|linebreaksbr}}</p>-->
 
     </div>
     <div class="col-md-2"></div>

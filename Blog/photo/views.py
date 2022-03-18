@@ -6,6 +6,7 @@ from django.views.generic.edit import *
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from languages.fields import LanguageField
 
 
 @login_required

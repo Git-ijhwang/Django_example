@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html lang="en">
     {% include 'head.html' %}
 <body>
 
+{% include 'nav.html' %}
 <div class="container">
 
-    {% include 'nav.html' %}
-
+    <div style="padding-top: 100px">
     {% block content %}
     {% endblock %}
+    </div>
     {% include 'footer.html' %}
 
 </div>
-
 
 </body>
 </html>
